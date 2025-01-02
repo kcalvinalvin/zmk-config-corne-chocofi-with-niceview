@@ -18,6 +18,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+                        label = "DEF";
 // -----------------------------------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I            |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K            |  L  |  ;  |
@@ -35,8 +36,7 @@
 // | BRIG+ |  V-  | mute  |  V+  | PWR  |   | F12 | F7 | F8 | F9 | trans |
 // | BRIG- | Prev | Pause | Next | Stop |   | F11 | F4 | F5 | F6 | trans |
 // | /Ble  | Ble0 | Ble1  | Ble2 | Ble3 |   | F10 | F1 | F2 | F3 | trans |
-//                      | Ble4| LWR | SPC |   | ENT | F0 | ALT |
-                       // &trans    &trans   &trans         &kp AT    &kp N0 &kp EXCL
+//                | Ble4  | LWR  | SPC  |   | ENT | -- | ALT |
                         bindings = <
    &kp C_BRI_UP  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &kp C_POWER      &kp F12 &kp F7 &kp F8    &kp F9  &trans
    &kp C_BRI_DN  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_STOP       &kp F11 &kp F4 &kp F5    &kp F6  &trans
