@@ -12,7 +12,7 @@
 #define FNC  1
 #define NUM  2
 #define NAV  3
-#define BSPC 4
+#define BACK 4
 
 / {
         hm: homerow_mods {
@@ -35,9 +35,9 @@
 //                    | GUI | LWR | SPC |  | ESC  | RSHIFT/SPACE  | ALT |
                         bindings = <
   &none   &kp Q        &kp W        &kp E            &kp R          &kp T       &kp Y            &kp U    &kp I     &kp O   &kp P       &none
-  &none   &lt BSPC A   &kp S        &kp D            &kp F          &kp G       &kp H            &kp J    &kp K     &kp L   &lt FNC SQT &none
-  &none   &lt LSHIFT Z &kp X        &kp C            &kp V          &kp B       &kp N            &kp M    &kp COMMA &kp DOT &kp FSLH    &none
-               &lt LGUI HASH        &lt LCTRL TILDE  &lt NUM AT     &lt NAV ESC &lt RSHIFT SPACE &lt LALT TAB
+  &none   &lt BACK A   &kp S        &kp D            &kp F          &kp G       &kp H            &kp J    &kp K     &kp L   &lt FNC SQT &none
+  &none   &mt LSHIFT Z &kp X        &kp C            &kp V          &kp B       &kp N            &kp M    &kp COMMA &kp DOT &kp FSLH    &none
+               &mt LGUI HASH        &mt LCTRL TILDE  &lt NUM AT     &lt NAV ESC &mt RSHIFT SPACE &mt LALT TAB
                         >;
                 };
                 function_layer {
