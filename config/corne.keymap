@@ -12,7 +12,6 @@
 #define FNC  1
 #define NUM  2
 #define NAV  3
-#define BACK 4
 
 / {
         hm: homerow_mods {
@@ -27,17 +26,17 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        label = "DEF";
+                        label = "BASE";
 // -----------------------------------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I            |  O  |  P  |
-// |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K            |  L  |  ;  |
+// |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K            |  L  |  '  |
 // |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,            |  .  |  /  |
 //                    | GUI | LWR | SPC |  | ESC  | RSHIFT/SPACE  | ALT |
                         bindings = <
-  &none   &kp Q        &kp W        &kp E            &kp R          &kp T       &kp Y            &kp U    &kp I     &kp O   &kp P       &none
-  &none   &lt BACK A   &kp S        &kp D            &kp F          &kp G       &kp H            &kp J    &kp K     &kp L   &lt FNC SQT &none
-  &none   &mt LSHIFT Z &kp X        &kp C            &kp V          &kp B       &kp N            &kp M    &kp COMMA &kp DOT &kp FSLH    &none
-               &mt LGUI HASH        &mt LCTRL TILDE  &lt NUM AT     &lt NAV ESC &mt RSHIFT SPACE &mt LALT TAB
+  &none   &mt LCTRL Q  &kp W        &kp E           &kp R          &kp T        &kp Y            &kp U    &kp I       &kp O   &mt RCTRL  P       &none
+  &none   &mt LGUI A   &kp S        &kp D           &kp F          &kp G        &kp H            &kp J    &kp K       &kp L   &lt        FNC SQT &none
+  &none   &mt LSHIFT Z &kp X        &kp C           &kp V          &kp B        &kp N            &kp M    &kp COMMA   &kp DOT &mt RSHIFT FSLH    &none
+               &mt LGUI TAB         &mt LALT ESC    &lt NUM BSPC   &lt NAV BSPC &kp SPACE        &kp RET
                         >;
                 };
                 function_layer {
@@ -48,43 +47,34 @@
 // | /Ble  | Ble0 | Ble1  | Ble2 | Ble3 |   | F10 | F1 | F2 | F3 | trans |
 //                | Ble4  | LWR  | SPC  |   | ENT | -- | ALT |
                         bindings = <
-  &none &kp C_BRI_UP  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &kp C_POWER      &kp F12 &kp F7 &kp F8    &kp F9  &trans &none
-  &none &kp C_BRI_DN  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_STOP       &kp F11 &kp F4 &kp F5    &kp F6  &trans &none
-  &none &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3     &kp F10 &kp F1 &kp F2    &kp F3  &trans &none
+  &none &kp C_BRI_UP  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &kp C_POWER      &kp F12 &kp F7 &kp F8  &kp F9  &trans &none
+  &none &kp C_BRI_DN  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_STOP       &kp F11 &kp F4 &kp F5  &kp F6  &trans &none
+  &none &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3     &kp F10 &kp F1 &kp F2  &kp F3  &trans &none
                        &trans    &trans   &trans         &trans    &trans &trans
                         >;
                 };
                 num_layer {
                         label = "NUM";
 // -----------------------------------------------------------------------------------------
-// | ` |  +  |  [  |  ]  |  =  |   | ^ | 7 | 8 | 9 | *  |
-// | # |  _  |  (  |  )  |  -  |   | % | 4 | 5 | 6 | +  |
-// | ~ |  &  |  {  |  }  |  |  |   | $ | 1 | 2 | 3 | -- |
+// | ` |  +  |  [  |  ]  |  =  |   | ^ | 7 | 8 | 9 | * |
+// | # |  _  |  (  |  )  |  -  |   | % | 4 | 5 | 6 | ; |
+// | ~ |  &  |  {  |  }  |  |  |   | $ | 1 | 2 | 3 | : |
 //           | --- | --- | --- |   | @ | 0 | ! |
                         bindings = <
   &none &kp GRAVE &kp PLUS  &kp LBKT  &kp RBKT &kp EQUAL      &kp CARET &kp N7 &kp N8   &kp N9 &kp KP_MULTIPLY &none
-  &none &kp HASH  &kp UNDER &kp LPAR  &kp RPAR &kp MINUS      &kp PRCNT &kp N4 &kp N5   &kp N6 &kp KP_PLUS     &none
-  &none &kp TILDE &kp AMPS  &kp LBRC  &kp RBRC &kp PIPE       &kp DLLR  &kp N1 &kp N2   &kp N3 &trans          &none
-                       &trans    &trans   &trans         &kp AT    &kp N0 &kp EXCL
+  &none &kp HASH  &kp UNDER &kp LPAR  &kp RPAR &kp MINUS      &kp PRCNT &kp N4 &kp N5   &kp N6 &kp SEMI        &none
+  &none &kp TILDE &kp AMPS  &kp LBRC  &kp RBRC &kp PIPE       &kp DLLR  &kp N1 &kp N2   &kp N3 &kp COLON       &none
+                       &trans    &trans   &trans              &kp AT    &kp N0 &kp EXCL
                         >;
                 };
                 nav_layer {
                         label = "NAV";
 // -----------------------------------------------------------------------------------------
                         bindings = <
-  &none &kp TAB   &trans    &trans    &trans   &trans         &trans   &trans   &trans    &trans    &kp BSPC &none
-  &none &kp ESC   &trans    &trans    &trans   &trans         &kp LEFT &kp DOWN &kp UP    &kp RIGHT &kp RET  &none
-  &none &trans    &trans    &trans    &trans   &trans         &trans   &trans   &trans    &trans    &trans   &none
-                       &trans    &trans   &trans         &trans   &trans   &trans
-                        >;
-                };
-                bspc_layer {
-                        label = "BSPC";
-                        bindings = <
-  &none &trans    &trans    &trans    &trans   &trans         &trans   &trans   &trans    &trans    &kp BSPC &none
-  &none &trans    &trans    &trans    &trans   &trans         &kp LEFT &kp DOWN &kp UP    &kp RIGHT &kp RET  &none
-  &none &trans    &trans    &trans    &trans   &trans         &trans   &trans   &trans    &trans    &trans   &none
-                       &trans    &trans   &trans         &trans   &trans   &trans
+  &none &kp TAB    &trans    &trans    &trans   &trans         &trans   &trans   &trans    &trans    &kp BSPC &none
+  &none &kp ESC    &trans    &trans    &trans   &trans         &kp LEFT &kp DOWN &kp UP    &kp RIGHT &kp RET  &none
+  &none &kp LSHIFT &trans    &trans    &trans   &trans         &trans   &trans   &trans    &trans    &trans   &none
+                     &kp LGUI  &kp LALT   &kp LCTRL           &trans   &trans   &trans
                         >;
                 };
         };
