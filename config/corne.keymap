@@ -32,7 +32,7 @@
 
                 fb: function_button {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "homerow mods";
+                        label = "function button";
                         #binding-cells = <2>;
                         tapping_term_ms = <200>;
                         flavor = "tap-preferred";
