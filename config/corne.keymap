@@ -30,6 +30,26 @@
                         bindings = <&kp>, <&kp>;
                 };
 
+                dk: delete_keys {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "delete keys";
+                        #binding-cells = <2>;
+                        tapping_term_ms = <150>;
+                        quick-tap-ms = <100>;
+                        flavor = "hold-preferred";
+                        bindings = <&mo>, <&kp>;
+                };
+
+                sh: shift_keys {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "shift keys";
+                        #binding-cells = <2>;
+                        tapping_term_ms = <170>;
+                        quick-tap-ms = <90>;
+                        flavor = "hold-preferred";
+                        bindings = <&kp>, <&kp>;
+                };
+
                 fb: function_button {
                         compatible = "zmk,behavior-hold-tap";
                         label = "function button";
@@ -54,8 +74,8 @@
                         bindings = <
   &none   &hm LGUI Q   &kp W        &kp E           &kp R          &kp T        &kp Y      &kp U    &kp I       &kp O        &kp P              &none
   &none   &kp A        &kp S        &kp D           &kp F          &kp G        &kp H      &kp J    &kp K       &kp L        &fb        FNC SQT &none
-  &none   &hm LSHIFT Z &kp X        &kp C           &kp V          &kp B        &kp N      &kp M    &kp COMMA   &hm RALT DOT &hm RSHIFT FSLH    &none
-               &hm LGUI TAB         &mt LCTRL ESC   &lt NUM BSPC   &lt NAV BSPC &kp SPACE  &lt CHAR RET
+  &none   &sh LSHIFT Z &kp X        &kp C           &kp V          &kp B        &kp N      &kp M    &kp COMMA   &hm RALT DOT &sh RSHIFT FSLH    &none
+               &hm LGUI TAB         &mt LCTRL ESC   &dk NUM BSPC   &dk NAV BSPC &kp SPACE  &lt CHAR RET
                         >;
                 };
                 function_layer {
