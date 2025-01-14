@@ -127,7 +127,7 @@
   &none &kp TAB    &trans    &trans    &trans   &trans         &trans   &trans   &trans    &trans    &kp BSPC &none
   &none &kp ESC    &trans    &trans    &trans   &trans         &kp LEFT &kp DOWN &kp UP    &kp RIGHT &kp RET  &none
   &none &kp LSHIFT &trans    &trans    &trans   &trans         &trans   &trans   &trans    &trans    &trans   &none
-                     &kp LGUI  &kp LCTRL  &kp LALT            &trans   &trans   &trans
+                     &kp LGUI  &kp LCTRL  &trans               &trans   &trans   &trans
                         >;
                 };
         };
